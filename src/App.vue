@@ -15,10 +15,10 @@ import { RouterLink, RouterView } from 'vue-router'
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <router-link to="/" class="nav-link">Home</router-link>
+                <router-link to="/" class="nav-link">Buscar</router-link>
               </li>
               <li class="nav-item">
-                <router-link to="/about" class="nav-link">About</router-link>
+                <router-link to="/about" class="nav-link">Reporte</router-link>
               </li>
             </ul>
           </div>

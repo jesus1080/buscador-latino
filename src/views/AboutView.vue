@@ -1,17 +1,17 @@
 <template>
-  <div class="container">
+  <div class="container p-4" >
     <div class="abs-center">
-      <SearchWik></SearchWik>
+      <ReportWik></ReportWik>
     </div>
   </div>
 </template>
 
 <script>
-  import SearchWik from '../components/SearchWik.vue'
+  import ReportWik from '../components/ReportWik.vue'
 
   export default {
     components: {
-      SearchWik
+      ReportWik
     }
   }
 </script>
