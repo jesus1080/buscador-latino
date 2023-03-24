@@ -3,14 +3,14 @@
       <table>
         <thead>
           <tr>
-            <th>Moneda</th>
-            <th>Precio</th>
+            <th>Palabra</th>
+            <th>Resumen</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="moneda in criptomonedas" :key="moneda.id">
-            <td>{{ moneda.currency }}</td>
-            <td>{{ moneda.rates.USD }}</td>
+          <tr v-for="busqueda in busquedas" :key="busqueda.id">
+            <td>{{ busqueda.palabra }}</td>
+            <td>{{ busqueda.resumen }}</td>
           </tr>
         </tbody>
       </table>
@@ -20,17 +20,20 @@
 <script>
   import axios from 'axios';
   
+  
   export default {
     data() {
       return {
-        criptomonedas: []
+        busquedas: []
       }
     },
     mounted() {
-      axios.get('https://api.coinbase.com/v2/exchange-rates')
+      
+      axios.get('http://127.0.0.1:8000/api/search/')
+        
         .then(response => {
-            this.criptomonedas = Object.entries(response.data.data.rates).map(([currency, rate]) => ({ currency, rates: { USD: rate }}));
-            console.log(response.data.data.rates);
+            this.busquedas = response.data
+            console.log(response.data[1].palabra);
         })
         .catch(error => {
           console.log(error);
