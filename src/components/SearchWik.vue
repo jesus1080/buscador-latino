@@ -41,9 +41,8 @@ export default {
   },
   methods:{
       buscar(){
-          console.log(this.palabra)
           const url = 'http://127.0.0.1:8000/search/'+this.palabra
-          console.log(url)
+          
           axios.get(url)
               .then((response) => {
                   this.resultados = response.data

@@ -35,7 +35,6 @@
         
         .then(response => {
             this.busquedas = response.data
-            console.log(response.data[1].palabra);
         })
         .catch(error => {
           console.log(error);
